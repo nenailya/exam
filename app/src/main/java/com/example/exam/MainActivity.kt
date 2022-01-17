@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.IBinder
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -50,6 +51,7 @@ class MainActivity : AppCompatActivity() {
     fun onButtonClick() {
         if (mBound) {
             val num: Int = mService.nextRandomInt()
+            findViewById<EditText>(R.id.editText).setText("$num")
             Toast.makeText(this, "number: $num", Toast.LENGTH_SHORT).show()
         }
     }
